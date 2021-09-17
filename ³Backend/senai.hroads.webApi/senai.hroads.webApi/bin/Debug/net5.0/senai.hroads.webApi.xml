@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>senai.hroads.webApi</name>
+    </assembly>
+    <members>
+        <member name="M:senai.hroads.webApi.Controllers.ClasseController.Get">
+            <summary>
+            Aqui sera listado todas as classes
+            </summary>
+            <returns> Com uma lista de classes e um status code 200(Ok)</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Controllers.ClasseController.BuscarPeloId(System.Int32)">
+            <summary>
+            Aqui sera buscado uma classe na qual o usuario desejar, pelo ID
+            </summary>
+            <returns> Com um status code 200(Ok)</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Controllers.ClasseController.Put(System.Int32,senai.hroads.webApi.Domains.Classe)">
+            <summary>
+            Aqui sera feito a atualização de uma classe
+            </summary>
+            <returns> Com um status code 204(No Content)</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Controllers.ClasseController.Delete(System.Int32)">
+            <summary>
+            Aqui sera feito o delete da classe
+            </summary>
+            <returns> Com um status code 204(No Content)</returns>
+        </member>
+        <member name="T:senai.hroads.webApi.Interfaces.IClasseRepository.IClasseRepository">
+            <summary>
+            Interface responsável pelo ClasseRepository
+            </summary>
+        </member>
+        <member name="M:senai.hroads.webApi.Interfaces.IClasseRepository.IClasseRepository.ListarTodas">
+            <summary>
+            Lista todas as Classes
+            </summary>
+            <returns>Retorna uma lista com todas as classes</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Interfaces.IClasseRepository.IClasseRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca uma classe pelo id
+            </summary>
+            <param name="id"> nome da Id da classe buscada</param>
+            <returns>Classe buscada</returns>
+        </member>
+        <member name="M:senai.hroads.webApi.Interfaces.IClasseRepository.IClasseRepository.Cadastrar(senai.hroads.webApi.Domains.Classe)">
+            <summary>
+            Cadastra uma nova classe
+            </summary>
+            <param name="novaClasse"> Objeto chamado "novaClasse" que será cadastrado</param>
+        </member>
+        <member name="M:senai.hroads.webApi.Interfaces.IClasseRepository.IClasseRepository.Atualizar(System.Int32,senai.hroads.webApi.Domains.Classe)">
+            <summary>
+            Atualiza uma classe já existente
+            </summary>
+            <param name="id">id da classe que será atualizada</param>
+            <param name="classeAtualizada"> objeto chamado "classeAtualizada" com as novas informações que serão atualizadas</param>
+        </member>
+        <member name="M:senai.hroads.webApi.Interfaces.IClasseRepository.IClasseRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta uma classe existente
+            </summary>
+            <param name="id">esse é o Id da classe que será deletada</param>
+        </member>
+        <member name="F:senai.hroads.webApi.Repositories.ClasseRepository.hctx">
+            <summary>
+            Objeto onde serão chamados os métodos do Framework.
+            </summary>
+        </member>
+    </members>
+</doc>

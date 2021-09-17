@@ -1,0 +1,62 @@
+CREATE DATABASE HROADS_TARDE;
+GO
+
+USE HROADS_TARDE;
+GO
+
+--DDL
+
+DROP TABLE Classe;
+GO
+
+CREATE TABLE Classe
+(
+	idClasse INT PRIMARY KEY IDENTITY ,
+	TipoClasse VARCHAR(200) NOT NULL
+);
+GO
+CREATE TABLE TipoHabilidade
+(
+	idTipoHabi INT PRIMARY KEY IDENTITY ,
+	QualTipoHabi VARCHAR (200) NOT NULL
+);
+GO
+CREATE TABLE Habilidade
+(
+	idHabilidade INT PRIMARY KEY IDENTITY ,
+	idTipoHabilidade INT FOREIGN KEY REFERENCES TipoHabilidade (idTipoHabilidade),
+	Nome VARCHAR (200) NOT NULL 
+);
+GO
+CREATE TABLE ClasseHabilidade
+(
+	idClasse INT FOREIGN KEY REFERENCES Classe(idClasse),
+	idHabilidade INT FOREIGN KEY REFERENCES Habilidade (idHabilidade)
+
+);
+GO
+CREATE TABLE Personagem 
+(
+	idPersonagem INT PRIMARY KEy IDENTITY,
+	idClasse INT FOREIGN  KEY REFERENCES Classe(idClasse),
+	NomePer VARCHAR (200) NOT NULL,
+	CapaMaxVida INT NOT NULL,
+	CapaMaxMana INT NOT NULL,
+	DataAtual DATE NOT NULL,
+	DataCriacao DATE NOT NULL
+);
+GO
+CREATE TABLE TipoUsuario 
+(
+	idTipoUsuario INT PRIMARY KEY IDENTITY,
+	permissao VARCHAR(200) NOT NULL
+);
+GO
+CREATE TABLE Usuario
+(
+	idUsuario INT PRIMARY KEY IDENTITY,
+	email VARCHAR(200) NOT NULL,
+	senha VARCHAR(100) NOT NULL,
+	idTipoUsuario INT FOREIGN KEY REFERENCES TipoUsuario(idTipoUsuario)
+);
+GO
